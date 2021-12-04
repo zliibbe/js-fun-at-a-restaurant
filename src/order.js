@@ -1,8 +1,6 @@
 
-//var deliveryOrders = [];
-
 function takeOrder (order, deliveryOrders) {
-      //for (var i = 0; i < 3; i++) {
+
       if (deliveryOrders.length <= 2) {
         deliveryOrders.push(order);
       }
@@ -13,6 +11,27 @@ function takeOrder (order, deliveryOrders) {
 }
 
 
+function refundOrder (orderNumber, deliveryOrders) {
+//splice(start#, remove#ofitems)
+//indexOf returns boolean value
+
+for ( var i = 0; i < deliveryOrders.length; i++) {
+    if (deliveryOrders[i].orderNumber === orderNumber) {
+      deliveryOrders.splice(i,1)
+    }
+}
+
+
+// if  (
+//
+// ) else (
+//
+// )
+      // placeIndicator = deliveryOrders.indexOf(orderNum-1)
+      // deliveryOrders.splice(placeIndicator, 1)
+
+
+}
 
 //function addOrder (orderNumber, item, price, orderType, status) {
       //var order =
@@ -20,7 +39,7 @@ function takeOrder (order, deliveryOrders) {
 
 module.exports = {
   takeOrder,
-  // refundOrder,
+  refundOrder,
   // listItems,
   // searchOrder
 }
