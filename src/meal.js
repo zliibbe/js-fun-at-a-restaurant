@@ -3,6 +3,10 @@ function nameMenuItem(name) {
       return menuItemName;
 }
 
+//calls function and returns "Delcious French Toast"
+nameMenuItem("French Toast");
+
+//returns menuItem object
 function createMenuItem(name, price, type) {
     var menuItem = {
       name: name,
@@ -12,27 +16,59 @@ function createMenuItem(name, price, type) {
     return menuItem;
 }
 
-//var ingredients = []
+//calls function createMenuItem & creates new object
+createMenuItem (menuItemName, 10.99, "breakfast");
+
+
+var listOfIngredients = [];
 
 function addIngredients(ingredient, listOfIngredients) {
-  //var ingredients = ["cheese", ingredient]
-  //anyArray = ingredients;
-  //anyArray.push(ingredient);
+      var  ingredients = listOfIngredients
 
-  //addIngredients("cheese", anyArray);
+          //if value exists in ingredients
+      if (ingredients.indexOf(ingredient) !== -1){
+          return ingredients;
 
-  return listOfIngredients.push(ingredient);
-
-  //function addIngredients(topping1, topping2) {
-  //topping2.push(topping1)
-  //} feedback to Rio & Casey why this is not topping1 & topping2
+        } else {
+        // else return ingredients array with new ingredient added
+        return ingredients.push(ingredient)
+      }
 }
+
+addIngredients("potatoes", listOfIngredients);
+console.log(listOfIngredients);
+
+//returns formatted price
+function formatPrice (initialPrice) {
+    return `$${initialPrice}`
+}
+
+//decreases price by 10% and returns decreased Price
+function decreasePrice (price) {
+    return price * .9
+}
+
+
+function createRecipe (title, ingredients, menuItemType) {
+  var recipe = {
+    title: title,
+    ingredients: ingredients,
+    type: menuItemType,
+
+  };
+
+  return recipe;
+
+
+}
+
+
 
 module.exports = {
   nameMenuItem,
   createMenuItem,
   addIngredients,
-  // formatPrice,
-  // decreasePrice,
-  // createRecipe
+  formatPrice,
+  decreasePrice,
+  createRecipe
 }
