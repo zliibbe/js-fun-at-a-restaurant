@@ -26,11 +26,31 @@ function listItems (deliveryOrders) {
     return listOrders.join(', ');
 }
 
+function searchOrder (deliveryOrders, foodItem) {
+    // is foodItem in deliveryOrders array?
+    // search deliveryOrders array for entered "foodItem" by delOrder[index].item
+    // return Boolean value
+    var boolean = false;
+
+
+    for (var i = 0; i < deliveryOrders.length; i++){
+
+        if (deliveryOrders[i].item === foodItem) {
+           boolean = true;
+        // } else {
+        //   orderBooleans.push(false);
+        }
+        //join(', ')
+    };
+return boolean
+
+
+}
 
 
 module.exports = {
   takeOrder,
   refundOrder,
   listItems,
-  // searchOrder
+  searchOrder
 }
