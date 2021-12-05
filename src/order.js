@@ -28,7 +28,7 @@ function listItems (deliveryOrders) {
 
 function searchOrder (deliveryOrders, foodItem) {
     // is foodItem in deliveryOrders array?
-    // search deliveryOrders array for entered "foodItem" by delOrder[index].item
+    // search deliveryOrders array for entered "foodItem"
     // return Boolean value
     var boolean = false;
 
