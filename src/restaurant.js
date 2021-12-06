@@ -1,9 +1,5 @@
 // var menus =
 
-var breakfastMenu = [];
-var lunchMenu = [];
-var dinnerMenu = [];
-
 function createRestaurant (name) {
 
   var pizzaRestaurant = {
@@ -11,15 +7,33 @@ function createRestaurant (name) {
     menus: {breakfast: [],
             lunch: [],
             dinner: []}
-    // menus: "lunch",
-    // menus: "dinner",
   };
-
 return pizzaRestaurant;
 }
 
+function addMenuItem (restaurant, menuItem) {
+  if (menuItem.type === "breakfast" && restaurant.menus.breakfast.includes(menuItem) === false) {
+
+      restaurant.menus.breakfast.push(menuItem)
+
+
+  } else if (menuItem.type === "lunch" && restaurant.menus.lunch.includes(menuItem) === false)  {
+
+    restaurant.menus.lunch.push(menuItem)
+  }
+  else  if (menuItem.type === "dinner" && restaurant.menus.dinner.includes(menuItem) === false) {
+
+    restaurant.menus.dinner.push(menuItems)
+      }
+
+      return restaurant;
+  }
+
+
+
+
 module.exports = {
   createRestaurant,
-  // addMenuItem,
+  addMenuItem,
   // removeMenuItem
 }
